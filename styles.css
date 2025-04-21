@@ -1,0 +1,499 @@
+.gradient-bg {
+    background: linear-gradient(135deg, #4338CA, #3B82F6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 9999;
+}
+.card-shadow {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.upload-area:hover {
+    border-color: #3B82F6;
+    transition: all 0.3s ease;
+}
+.btn-primary {
+    background: linear-gradient(135deg, #4F46E5, #3B82F6);
+    transition: all 0.3s ease;
+}
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.4);
+}
+.btn-secondary {
+    background: linear-gradient(135deg, #8B5CF6, #6D28D9);
+    transition: all 0.3s ease;
+    color: white;
+}
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(109, 40, 217, 0.4);
+}
+.btn-green {
+    background: linear-gradient(135deg, #10B981, #059669);
+    transition: all 0.3s ease;
+    color: white;
+}
+.btn-green:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.4);
+}
+.feature-icon {
+    transition: all 0.3s ease;
+}
+.feature-card:hover .feature-icon {
+    transform: scale(1.1);
+}
+.feature-card {
+    transition: all 0.3s ease;
+}
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Elegant Tab Navigation */
+.tabs-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0 30px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 10;
+    border-bottom: none;
+    border: none;
+}
+
+.tab-btn {
+    position: relative;
+    transition: all 0.4s ease;
+    padding: 10px 30px;
+    font-weight: 600;
+    color: #718096;
+    font-size: 1rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 0 5px;
+    border-radius: 30px;
+    outline: none;
+}
+
+.tab-btn:focus {
+    outline: none;
+}
+
+.tab-btn:hover {
+    color: #4338CA;
+}
+
+.tab-btn::before {
+    display: none; /* Menghilangkan garis bawah default */
+}
+
+.tab-btn:hover::before {
+    display: none;
+}
+
+.tab-btn.active {
+    color: #3B82F6;
+    font-weight: 700;
+}
+
+.tab-btn.active::before {
+    display: none;
+}
+
+.tab-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(59, 130, 246, 0.1));
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+    border-radius: 30px;
+}
+
+.tab-btn:hover::after {
+    transform: scaleX(1);
+}
+
+.tab-btn.active::after {
+    transform: scaleX(1);
+}
+
+.tab-indicator {
+    position: absolute;
+    bottom: 10px;
+    height: 3px;
+    background: linear-gradient(135deg, #4338CA, #3B82F6);
+    transition: all 0.4s ease;
+    z-index: 5;
+    box-shadow: 0 1px 3px rgba(79, 70, 229, 0.3);
+}
+
+/* Style tab aktif */
+.tabs-navigation .tab-btn.active {
+    border-bottom: none !important;
+}
+
+/* Menghilangkan garis tambahan lainnya */
+.tabs-navigation::after {
+    display: none;
+}
+
+.tabs-container {
+    border-top: none;
+}
+
+/* Section Spacing */
+.section-container {
+    margin-top: 30px;
+    padding-top: 30px;
+}
+
+/* Clear previous conflicting setting */
+#tools {
+    margin-top: 60px;
+}
+
+/* Make footer stick to bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 70px;
+}
+
+html {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+footer {
+    margin-top: auto;
+}
+
+/* Fixing hero section */
+.relative.overflow-hidden.bg-gradient-to-b {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+}
+
+/* Better mobile spacing */
+@media screen and (max-width: 640px) {
+    .section-container {
+        margin-top: 20px;
+        padding-top: 20px;
+    }
+    
+    #tools {
+        margin-top: 40px;
+    }
+
+    .container {
+        padding-left: 12px;
+        padding-right: 12px;
+        width: 100%;
+        overflow-x: hidden;
+        margin-bottom: 20px;
+    }
+    
+    h1, h2, h3 {
+        word-wrap: break-word;
+        hyphens: auto;
+        max-width: 100%;
+        padding: 0 6px;
+    }
+    
+    p {
+        max-width: 100%;
+        font-size: 0.95rem;
+        padding: 0 6px;
+    }
+    
+    .tab-btn {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+    
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    
+    .media-type-btn {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+    }
+}
+
+/* Mobile Navigation */
+@media screen and (max-width: 768px) {
+    .gradient-bg, .gradient-bg nav {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+    }
+    
+    #mobileMenu {
+        position: absolute;
+        width: 100%;
+        z-index: 9998;
+    }
+}
+
+/* Prevent text overflow */
+.break-words {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+/* Style untuk gambar preview */
+#coverImagePreview, #stegoImagePreview, #stegoImageDecodePreview {
+    max-height: 300px;
+    max-width: 100%;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style untuk container preview */
+#coverPreview, #stegoPreview, #encodeResult, #decodeResult {
+    background-color: #f8fafc;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* Membatasi ukuran maksimum card container */
+.card-container {
+    position: relative;
+    width: 100%;
+    min-height: 700px;
+    max-height: 700px;
+    overflow-y: auto;
+}
+
+.card-flipper {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+}
+
+.card-front, .card-back {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+/* Pastikan semua tab mendapatkan tampilan yang konsisten */
+#imageEncodeTab, #imageDecodeTab, #audioEncodeTab, #audioDecodeTab {
+    position: relative;
+    width: 100%;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+/* Memperbaiki masalah tampilan terbalik */
+.normal-orientation {
+    backface-visibility: visible !important;
+    -webkit-backface-visibility: visible !important;
+    transform: none !important;
+    position: relative !important;
+}
+
+/* Memastikan elemen dengan kelas hidden benar-benar tersembunyi */
+.hidden {
+    display: none !important;
+}
+
+/* Mengatasi masalah tampilan pada responsivitas */
+@media screen and (max-width: 768px) {
+    .card-container, .card-flipper, .card-front, .card-back {
+        min-height: auto;
+        max-height: none;
+    }
+    
+    .tab-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    #coverImagePreview, #stegoImagePreview, #stegoImageDecodePreview {
+        max-height: 200px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .card-container, .card-flipper, .card-front, .card-back {
+        min-height: auto;
+        max-height: none;
+    }
+    
+    #coverImagePreview, #stegoImagePreview, #stegoImageDecodePreview {
+        max-height: 180px;
+    }
+}
+
+/* Style untuk audio player */
+audio {
+    width: 100%;
+    border-radius: 8px;
+    outline: none;
+}
+
+/* Style untuk visualisasi audio */
+.audio-waveform {
+    height: 60px;
+    background-color: #f1f5f9;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 10px;
+    position: relative;
+}
+
+.audio-wave-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.audio-wave-placeholder .flex > div {
+    width: 3px;
+    background-color: currentColor;
+    border-radius: 3px;
+    transition: height 0.3s ease;
+}
+
+#audioPreview .audio-wave-placeholder .flex > div {
+    background-color: #10b981;
+}
+
+#stegoAudioPreviewContainer .audio-wave-placeholder .flex > div {
+    background-color: #8b5cf6;
+}
+
+#encodeAudioResult .audio-wave-placeholder .flex > div {
+    background-color: #10b981;
+}
+
+/* Memperbaiki tampilan terbalik pada bagian audio */
+#audioDecodeTab, #audioEncodeTab {
+    transform: rotateY(0deg) !important;
+    position: relative !important;
+    backface-visibility: visible !important;
+    -webkit-backface-visibility: visible !important;
+}
+
+/* Animasi yang lebih smooth untuk tab */
+.tab-btn {
+    transition: all 0.3s ease;
+}
+
+/* Memperbaiki tampilan elemen yang terbalik */
+#audioDecodeTab label, 
+#audioDecodeTab input,
+#audioDecodeTab button,
+#audioDecodeTab h2,
+#audioDecodeTab p,
+#audioDecodeTab div,
+#audioDecodeTab audio {
+    transform: none;
+    text-align: left;
+    direction: ltr;
+}
+
+/* Memperbaiki masalah tampilan terbalik pada semua tab */
+.bg-white {
+    transform: none !important;
+}
+
+/* Tab Audio dengan orientasi normal */
+.normal-orientation {
+    backface-visibility: visible !important;
+    -webkit-backface-visibility: visible !important;
+    transform: none !important;
+    position: relative !important;
+}
+
+/* Memastikan elemen dengan kelas hidden benar-benar tersembunyi tetapi tidak menghilangkan konten yang seharusnya terlihat */
+.hidden {
+    display: none !important;
+}
+
+/* Pastikan konten card-back terlihat saat diputar */
+.card-flipper.flipped .card-back {
+    z-index: 3;
+}
+
+/* Media Type Button Styles */
+.media-type-btn {
+    transition: all 0.3s ease;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    border-radius: 0.375rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.media-type-btn.active {
+    background-color: #EBF5FF;
+    color: #3B82F6;
+    font-weight: 600;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.media-type-btn:hover:not(.active) {
+    background-color: #F3F4F6;
+    color: #4B5563;
+}
+
+.media-type-btn:focus {
+    outline: none;
+    ring: 2px;
+    ring-color: #3B82F6;
+    ring-offset: 2px;
+}
+
+@media screen and (max-width: 640px) {
+    .media-type-btn {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+    }
+    
+    .media-type-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* Mengatasi masalah hasil yang terlalu panjang */
+#encodeResult, #decodeResult, #encodeAudioResult, #decodeAudioResult {
+    max-height: 500px;
+    overflow-y: auto;
+}
