@@ -9,500 +9,553 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dct/0.0.3/dct.min.js"></script>
 </head>
 <body class="bg-gray-50 min-h-screen font-sans">
-    <nav class="gradient-bg text-white shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-3 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
+    
+    <!-- Navbar -->
+    <header class="gradient-bg shadow-md fixed top-0 w-full z-50">
+        <nav class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
             <div class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white mr-2" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
                 </svg>
-                <span class="font-bold text-xl sm:text-2xl tracking-tight">StegaShield</span>
+                <a href="#" class="font-bold text-2xl tracking-tight text-white">StegaShield</a>
             </div>
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#" class="hover:text-gray-200 transition duration-300 text-sm font-medium uppercase tracking-wider">Beranda</a>
-                <a href="#" class="hover:text-gray-200 transition duration-300 text-sm font-medium uppercase tracking-wider">Tentang</a>
-                <a href="#" class="hover:text-gray-200 transition duration-300 text-sm font-medium uppercase tracking-wider">Dokumentasi</a>
-                <a href="#" class="bg-white text-blue-600 px-4 sm:px-6 py-1.5 sm:py-2 rounded-lg hover:bg-gray-100 transition duration-300 text-sm font-medium uppercase tracking-wider">Kontak</a>
+            
+            <!-- Desktop Navigation -->
+            <div class="flex space-x-8">
+                <a href="#tools" class="text-white hover:text-blue-100 transition duration-300">Tools</a>
+                <a href="#how-it-works" class="text-white hover:text-blue-100 transition duration-300">How It Works</a>
+                <a href="#faq" class="text-white hover:text-blue-100 transition duration-300">FAQ</a>
             </div>
-            <button class="md:hidden" id="mobileMenuBtn">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
+            
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobileMenuBtn" class="text-white focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden bg-blue-800 hidden">
+            <a href="#tools" class="block py-3 px-6 text-white hover:bg-blue-700">Tools</a>
+            <a href="#how-it-works" class="block py-3 px-6 text-white hover:bg-blue-700">How It Works</a>
+            <a href="#faq" class="block py-3 px-6 text-white hover:bg-blue-700">FAQ</a>
         </div>
-        <!-- Mobile menu, hidden by default -->
-        <div id="mobileMenu" class="hidden px-4 pt-2 pb-4 bg-blue-800 md:hidden">
-            <a href="#" class="block py-2 hover:bg-blue-700 px-2 rounded">Beranda</a>
-            <a href="#" class="block py-2 hover:bg-blue-700 px-2 rounded">Tentang</a>
-            <a href="#" class="block py-2 hover:bg-blue-700 px-2 rounded">Dokumentasi</a>
-            <a href="#" class="block py-2 mt-2 bg-white text-blue-600 px-2 rounded font-medium">Kontak</a>
-        </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <div class="relative overflow-hidden bg-gradient-to-b from-blue-50 to-white">
-        <div class="container mx-auto px-4 py-10 md:py-16 lg:py-20">
-            <div class="text-center max-w-3xl mx-auto">
-                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight px-2">Steganografi Domain Transformasi</h1>
-                <p class="text-base sm:text-lg md:text-xl text-gray-600 mb-6 md:mb-10 leading-relaxed mx-auto px-4 max-w-2xl">Sembunyikan pesan rahasia dalam gambar dan audio menggunakan teknik DCT yang canggih, menawarkan ketahanan lebih baik dari metode tradisional.</p>
-                <a href="#tools" class="inline-block btn-primary text-white font-medium px-6 py-2 md:px-8 md:py-3 rounded-lg text-base md:text-lg shadow-lg">Mulai Sekarang</a>
+<!-- Beranda (Homepage) Section -->
+<section class="bg-gray-50 py-16 sm:py-24 mt-16">
+    <div class="container mx-auto px-4 sm:px-6">
+        <div class="flex flex-col lg:flex-row items-center justify-between">
+            <div class="lg:w-1/2 lg:pr-10 mb-10 lg:mb-0">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 mb-6">
+                    Steganografi Domain Transformasi
+                </h1>
+                <p class="text-xl text-gray-600 mb-8">
+                    Sembunyikan pesan rahasia dalam gambar dan audio menggunakan
+                    teknik GAN yang canggih, menawarkan ketahanan lebih baik dari
+                    metode tradisional.
+                </p>
+                <a href="#tools" class="btn-primary text-white py-3 px-8 rounded-xl font-medium text-lg inline-block">
+                    Mulai Sekarang
+                </a>
+            </div>
+            <div class="lg:w-1/2 flex justify-center">
+                <div class="relative">
+                    <div class="absolute -top-6 -left-6 w-40 h-40 bg-blue-100 rounded-full opacity-50"></div>
+                    <div class="absolute -bottom-6 -right-6 w-40 h-40 bg-purple-100 rounded-full opacity-50"></div>
+                    <div class="bg-white p-4 rounded-xl shadow-lg relative z-10">
+                        <img src="image.png" alt="StegaShield Illustration" class="rounded-lg">
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="h-16"></div>
     </div>
+</section>
 
-    <!-- Main Tools Section -->
-    <div id="tools" class="container section-container mx-auto px-3 sm:px-6 py-8 sm:py-12 md:py-16">
-        <div class="flex flex-col lg:flex-row gap-6 lg:gap-10">
-            <!-- Tabs Navigation -->
-            <div class="flex-1 bg-white rounded-2xl card-shadow p-4 sm:p-6 md:p-8 border border-gray-100">
-                <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-6">StegaShield Tools</h2>
-                
-                <!-- Media Type Selection -->
-                <div class="mb-8 flex justify-center">
-                    <div class="inline-flex rounded-md shadow-sm" role="group">
-                        <button id="imageTypeBtn" type="button" class="media-type-btn active px-4 py-2 text-sm font-medium text-blue-700 bg-white border border-blue-300 rounded-l-lg hover:bg-blue-50 focus:z-10 focus:ring-2 focus:ring-blue-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
-                            Gambar
-                        </button>
-                        <button id="audioTypeBtn" type="button" class="media-type-btn px-4 py-2 text-sm font-medium text-blue-700 bg-white border border-blue-300 rounded-r-lg hover:bg-blue-50 focus:z-10 focus:ring-2 focus:ring-blue-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M19 19a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h10a2 2 0 012 2v10" />
-                            </svg>
-                            Audio
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Elegant Centered Tabs -->
-                <div class="tabs-navigation mb-8">
-                    <button id="encodeTabBtn" class="tab-btn active">
-                        Enkripsi Pesan
+<!-- Main Tools Section -->
+<div id="tools" class="container section-container mx-auto px-3 sm:px-6 py-8 sm:py-12 md:py-16">
+    <div class="flex flex-col lg:flex-row gap-6 lg:gap-10">
+        <!-- Tabs Navigation -->
+        <div class="flex-1 bg-white rounded-2xl card-shadow p-4 sm:p-6 md:p-8 border border-gray-100">
+            <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-6">StegaShield Tools</h2>
+            
+            <!-- Media Type Selection -->
+            <div class="mb-8 flex justify-center">
+                <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button id="imageTypeBtn" type="button" class="media-type-btn active px-4 py-2 text-sm font-medium text-blue-700 bg-white border border-blue-300 rounded-l-lg hover:bg-blue-50 focus:z-10 focus:ring-2 focus:ring-blue-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        Gambar
                     </button>
-                    <button id="decodeTabBtn" class="tab-btn">
-                        Dekripsi Pesan
+                    <button id="audioTypeBtn" type="button" class="media-type-btn px-4 py-2 text-sm font-medium text-blue-700 bg-white border border-blue-300 rounded-r-lg hover:bg-blue-50 focus:z-10 focus:ring-2 focus:ring-blue-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M19 19a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h10a2 2 0 012 2v10" />
+                        </svg>
+                        Audio
                     </button>
-                    <span class="tab-indicator"></span>
-                </div>
-                
-                <!-- Card Container with Flip Animation -->
-                <div class="card-container">
-                    <div id="cardFlipper" class="card-flipper">
-                        <!-- Image Encode Tab Content (Front Card) -->
-                        <div id="imageEncodeTab" class="card-front bg-white">
-                            <div class="flex items-center mb-6">
-                                <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                                    </svg>
-                                </div>
-                                <h2 class="text-2xl font-bold text-gray-800">Enkripsi Pesan - Gambar</h2>
-                            </div>
-                            
-                            <div class="mb-6">
-                                <label class="block text-gray-700 font-medium mb-2" for="coverImage">Gambar Cover</label>
-                                <div class="flex items-center justify-center w-full">
-                                    <label class="flex flex-col w-full h-36 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:bg-gray-50 upload-area">
-                                        <div class="flex flex-col items-center justify-center pt-7">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                            </svg>
-                                            <p class="pt-3 text-sm font-medium text-blue-500">Unggah gambar cover</p>
-                                            <p class="text-xs text-gray-400 mt-1">PNG, JPG atau GIF hingga 5MB</p>
-                                        </div>
-                                        <input id="coverImage" type="file" class="hidden" accept="image/*" />
-                                    </label>
-                                </div>
-                                <div id="coverPreview" class="mt-6 hidden">
-                                    <img id="coverImagePreview" class="max-h-64 rounded-xl mx-auto shadow-md" src="/api/placeholder/400/320" alt="Cover image preview" />
-                                </div>
-                            </div>
-                            
-                            <div class="mb-6">
-                                <label class="block text-gray-700 font-medium mb-2" for="secretMessage">Pesan Rahasia</label>
-                                <textarea id="secretMessage" class="w-full px-4 py-3 text-gray-700 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300" rows="4" placeholder="Masukkan pesan rahasia Anda..."></textarea>
-                            </div>
-                            
-                            <div class="mb-8">
-                                <label class="block text-gray-700 font-medium mb-2" for="password">Kata Sandi (Opsional)</label>
-                                <input id="password" type="password" class="w-full px-4 py-3 text-gray-700 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300" placeholder="Masukkan kata sandi untuk keamanan tambahan" />
-                            </div>
-                            
-                            <button id="encodeBtn" class="w-full btn-primary text-white py-3 px-4 rounded-xl font-medium text-lg text-center flex justify-center items-center">Enkripsi Pesan</button>
-                            
-                            <div id="encodeResult" class="mt-8 hidden">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-4">Hasil</h3>
-                                <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
-                                    <img id="stegoImagePreview" class="max-h-64 rounded-xl mx-auto shadow-md" src="/api/placeholder/400/320" alt="Stego image preview" />
-                                    <div class="mt-6 flex justify-center">
-                                        <a id="downloadLink" class="btn-primary text-white py-3 px-6 rounded-xl font-medium" download="stego_image.png">Unduh Gambar</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Audio Encode Tab Content -->
-                        <div id="audioEncodeTab" class="bg-white hidden normal-orientation">
-                            <div class="flex items-center mb-6">
-                                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mr-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M19 19a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h10a2 2 0 012 2v10" />
-                                    </svg>
-                                </div>
-                                <h2 class="text-2xl font-bold text-gray-800">Enkripsi Pesan - Audio</h2>
-                            </div>
-                            
-                            <div class="mb-6">
-                                <label class="block text-gray-700 font-medium mb-2" for="coverAudio">Audio Cover</label>
-                                <div class="flex items-center justify-center w-full">
-                                    <label class="flex flex-col w-full h-36 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:bg-gray-50 upload-area">
-                                        <div class="flex flex-col items-center justify-center pt-7">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M19 19a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h10a2 2 0 012 2v10" />
-                                            </svg>
-                                            <p class="pt-3 text-sm font-medium text-green-500">Unggah audio cover</p>
-                                            <p class="text-xs text-gray-400 mt-1">MP3, WAV, atau OGG hingga 10MB</p>
-                                        </div>
-                                        <input id="coverAudio" type="file" class="hidden" accept="audio/*" />
-                                    </label>
-                                </div>
-                                <div id="audioPreview" class="mt-6 hidden">
-                                    <div class="bg-gray-100 p-4 rounded-xl shadow-md">
-                                        <audio id="coverAudioPreview" class="w-full" controls></audio>
-                                        <div class="mt-3 flex items-center justify-center">
-                                            <div class="w-full bg-gray-200 h-16 rounded-lg overflow-hidden audio-waveform">
-                                                <!-- Audio waveform visualization will be generated here -->
-                                                <div class="audio-wave-placeholder flex items-center justify-center h-full">
-                                                    <div class="flex space-x-1">
-                                                        <div class="w-1 h-4 bg-green-500 animate-pulse"></div>
-                                                        <div class="w-1 h-8 bg-green-500 animate-pulse"></div>
-                                                        <div class="w-1 h-6 bg-green-500 animate-pulse"></div>
-                                                        <div class="w-1 h-10 bg-green-500 animate-pulse"></div>
-                                                        <div class="w-1 h-4 bg-green-500 animate-pulse"></div>
-                                                        <div class="w-1 h-7 bg-green-500 animate-pulse"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="mb-6">
-                                <label class="block text-gray-700 font-medium mb-2" for="secretMessageAudio">Pesan Rahasia</label>
-                                <textarea id="secretMessageAudio" class="w-full px-4 py-3 text-gray-700 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300" rows="4" placeholder="Masukkan pesan rahasia Anda..."></textarea>
-                            </div>
-                            
-                            <div class="mb-8">
-                                <label class="block text-gray-700 font-medium mb-2" for="passwordAudio">Kata Sandi (Opsional)</label>
-                                <input id="passwordAudio" type="password" class="w-full px-4 py-3 text-gray-700 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300" placeholder="Masukkan kata sandi untuk keamanan tambahan" />
-                            </div>
-                            
-                            <button id="encodeAudioBtn" class="w-full btn-green text-white py-3 px-4 rounded-xl font-medium text-lg text-center flex justify-center items-center">Enkripsi Pesan</button>
-                            
-                            <div id="encodeAudioResult" class="mt-8 hidden">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-4">Hasil</h3>
-                                <div class="bg-green-50 p-6 rounded-xl border border-green-100">
-                                    <div class="bg-white p-4 rounded-lg shadow-sm">
-                                        <audio id="stegoAudioPreview" class="w-full" controls></audio>
-                                        <div class="mt-3 flex items-center justify-center">
-                                            <div class="w-full bg-gray-100 h-16 rounded-lg overflow-hidden audio-waveform">
-                                                <!-- Stego audio waveform visualization -->
-                                                <div class="audio-wave-placeholder flex items-center justify-center h-full">
-                                                    <div class="flex space-x-1">
-                                                        <div class="w-1 h-5 bg-green-500 animate-pulse"></div>
-                                                        <div class="w-1 h-7 bg-green-500 animate-pulse"></div>
-                                                        <div class="w-1 h-6 bg-green-500 animate-pulse"></div>
-                                                        <div class="w-1 h-9 bg-green-500 animate-pulse"></div>
-                                                        <div class="w-1 h-5 bg-green-500 animate-pulse"></div>
-                                                        <div class="w-1 h-8 bg-green-500 animate-pulse"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mt-6 flex justify-center">
-                                        <a id="downloadAudioLink" class="btn-green text-white py-3 px-6 rounded-xl font-medium" download="stego_audio.mp3">Unduh Audio</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Image Decode Tab Content (Back Card) -->
-                        <div id="imageDecodeTab" class="card-back bg-white">
-                            <div class="flex items-center mb-6">
-                                <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mr-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
-                                    </svg>
-                                </div>
-                                <h2 class="text-2xl font-bold text-gray-800">Dekripsi Pesan - Gambar</h2>
-                            </div>
-                            
-                            <div class="mb-6">
-                                <label class="block text-gray-700 font-medium mb-2" for="stegoImage">Gambar Stego</label>
-                                <div class="flex items-center justify-center w-full">
-                                    <label class="flex flex-col w-full h-36 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:bg-gray-50 upload-area">
-                                        <div class="flex flex-col items-center justify-center pt-7">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                            </svg>
-                                            <p class="pt-3 text-sm font-medium text-purple-500">Unggah gambar stego</p>
-                                            <p class="text-xs text-gray-400 mt-1">PNG, JPG atau GIF hingga 5MB</p>
-                                        </div>
-                                        <input id="stegoImage" type="file" class="hidden" accept="image/*" />
-                                    </label>
-                                </div>
-                                <div id="stegoPreview" class="mt-6 hidden">
-                                    <img id="stegoImageDecodePreview" class="max-h-64 rounded-xl mx-auto shadow-md" src="/api/placeholder/400/320" alt="Stego image preview" />
-                                </div>
-                            </div>
-                            
-                            <div class="mb-8">
-                                <label class="block text-gray-700 font-medium mb-2" for="decodePassword">Kata Sandi (Jika diperlukan)</label>
-                                <input id="decodePassword" type="password" class="w-full px-4 py-3 text-gray-700 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300" placeholder="Masukkan kata sandi jika ada" />
-                            </div>
-                            
-                            <button id="decodeBtn" class="w-full btn-secondary text-white py-3 px-4 rounded-xl font-medium text-lg text-center flex justify-center items-center">Dekripsi Pesan</button>
-                            
-                            <div id="decodeResult" class="mt-8 hidden">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-4">Pesan Terdekripsi</h3>
-                                <div class="bg-purple-50 p-6 rounded-xl border border-purple-100">
-                                    <p id="extractedMessage" class="text-gray-700 break-words bg-white p-4 rounded-lg shadow-sm"></p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Audio Decode Tab Content -->
-                        <div id="audioDecodeTab" class="bg-white hidden normal-orientation">
-                            <div class="flex items-center mb-6">
-                                <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mr-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M19 19a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h10a2 2 0 012 2v10" />
-                                    </svg>
-                                </div>
-                                <h2 class="text-2xl font-bold text-gray-800">Dekripsi Pesan - Audio</h2>
-                            </div>
-                            
-                            <div class="mb-6">
-                                <label class="block text-gray-700 font-medium mb-2" for="stegoAudio">Audio Stego</label>
-                                <div class="flex items-center justify-center w-full">
-                                    <label class="flex flex-col w-full h-36 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:bg-gray-50 upload-area">
-                                        <div class="flex flex-col items-center justify-center pt-7">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M19 19a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h10a2 2 0 012 2v10" />
-                                            </svg>
-                                            <p class="pt-3 text-sm font-medium text-purple-500">Unggah audio stego</p>
-                                            <p class="text-xs text-gray-400 mt-1">MP3, WAV, atau OGG hingga 10MB</p>
-                                        </div>
-                                        <input id="stegoAudio" type="file" class="hidden" accept="audio/*" />
-                                    </label>
-                                </div>
-                                <div id="stegoAudioPreviewContainer" class="mt-6 hidden">
-                                    <div class="bg-gray-100 p-4 rounded-xl shadow-md">
-                                        <audio id="stegoAudioDecodePreview" class="w-full" controls></audio>
-                                        <div class="mt-3 flex items-center justify-center">
-                                            <div class="w-full bg-gray-200 h-16 rounded-lg overflow-hidden audio-waveform">
-                                                <!-- Audio waveform visualization -->
-                                                <div class="audio-wave-placeholder flex items-center justify-center h-full">
-                                                    <div class="flex space-x-1">
-                                                        <div class="w-1 h-5 bg-purple-500 animate-pulse"></div>
-                                                        <div class="w-1 h-9 bg-purple-500 animate-pulse"></div>
-                                                        <div class="w-1 h-6 bg-purple-500 animate-pulse"></div>
-                                                        <div class="w-1 h-8 bg-purple-500 animate-pulse"></div>
-                                                        <div class="w-1 h-4 bg-purple-500 animate-pulse"></div>
-                                                        <div class="w-1 h-7 bg-purple-500 animate-pulse"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="mb-8">
-                                <label class="block text-gray-700 font-medium mb-2" for="decodePasswordAudio">Kata Sandi (Jika diperlukan)</label>
-                                <input id="decodePasswordAudio" type="password" class="w-full px-4 py-3 text-gray-700 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300" placeholder="Masukkan kata sandi jika ada" />
-                            </div>
-                            
-                            <button id="decodeAudioBtn" class="w-full btn-secondary text-white py-3 px-4 rounded-xl font-medium text-lg text-center flex justify-center items-center">Dekripsi Pesan</button>
-                            
-                            <div id="decodeAudioResult" class="mt-8 hidden">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-4">Pesan Terdekripsi</h3>
-                                <div class="bg-purple-50 p-6 rounded-xl border border-purple-100">
-                                    <p id="extractedAudioMessage" class="text-gray-700 break-words bg-white p-4 rounded-lg shadow-sm"></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             
-            <!-- Info Panel -->
-            <div class="lg:w-96 bg-white rounded-2xl card-shadow p-4 sm:p-6 md:p-8 border border-gray-100">
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Tentang StegaShield</h2>
-                
-                <div class="mb-8">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Apa itu Steganografi DCT?</h3>
-                    <p class="text-gray-600 leading-relaxed">Discrete Cosine Transform (DCT) adalah teknik steganografi domain transformasi yang menyembunyikan pesan dalam koefisien frekuensi, bukan langsung pada piksel. Ini memberikan ketahanan yang lebih baik terhadap kompresi dan manipulasi.</p>
+            <!-- Elegant Centered Tabs -->
+            <div class="tabs-navigation mb-8">
+                <button id="encodeTabBtn" class="tab-btn active">
+                    Enkripsi Pesan
+                </button>
+                <button id="decodeTabBtn" class="tab-btn">
+                    Dekripsi Pesan
+                </button>
+                <span class="tab-indicator"></span>
+            </div>
+            
+            <!-- Card Container with Flip Animation -->
+            <div class="card-container">
+                <div id="cardFlipper" class="card-flipper">
+                    <!-- Image Encode Tab Content (Front Card) -->
+                    <div id="imageEncodeTab" class="card-front bg-white">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                </svg>
+                            </div>
+                            <h2 class="text-2xl font-bold text-gray-800">Enkripsi Pesan - Gambar</h2>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2" for="coverImage">Gambar Cover</label>
+                            <div class="flex items-center justify-center w-full">
+                                <label class="flex flex-col w-full h-36 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:bg-gray-50 upload-area">
+                                    <div class="flex flex-col items-center justify-center pt-7">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                        <p class="pt-3 text-sm font-medium text-blue-500">Unggah gambar cover</p>
+                                        <p class="text-xs text-gray-400 mt-1">PNG, JPG atau GIF hingga 5MB</p>
+                                    </div>
+                                    <input id="coverImage" type="file" class="hidden" accept="image/*" />
+                                </label>
+                            </div>
+                            <div id="coverPreview" class="mt-6 hidden">
+                                <img id="coverImagePreview" class="max-h-64 rounded-xl mx-auto shadow-md" src="/api/placeholder/400/320" alt="Cover image preview" />
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2" for="secretMessage">Pesan Rahasia</label>
+                            <textarea id="secretMessage" class="w-full px-4 py-3 text-gray-700 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300" rows="4" placeholder="Masukkan pesan rahasia Anda..."></textarea>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <label class="block text-gray-700 font-medium mb-2" for="password">Kata Sandi (Opsional)</label>
+                            <input id="password" type="password" class="w-full px-4 py-3 text-gray-700 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300" placeholder="Masukkan kata sandi untuk keamanan tambahan" />
+                        </div>
+                        
+                        <button id="encodeBtn" class="w-full btn-primary text-white py-3 px-4 rounded-xl font-medium text-lg text-center flex justify-center items-center">Enkripsi Pesan</button>
+                        
+                        <div id="encodeResult" class="mt-8 hidden">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Hasil</h3>
+                            <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
+                                <img id="stegoImagePreview" class="max-h-64 rounded-xl mx-auto shadow-md" src="/api/placeholder/400/320" alt="Stego image preview" />
+                                <div class="mt-6 flex justify-center">
+                                    <a id="downloadLink" class="btn-primary text-white py-3 px-6 rounded-xl font-medium" download="stego_image.png">Unduh Gambar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Audio Encode Tab Content -->
+                    <div id="audioEncodeTab" class="bg-white hidden normal-orientation">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M19 19a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h10a2 2 0 012 2v10" />
+                                </svg>
+                            </div>
+                            <h2 class="text-2xl font-bold text-gray-800">Enkripsi Pesan - Audio</h2>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2" for="coverAudio">Audio Cover</label>
+                            <div class="flex items-center justify-center w-full">
+                                <label class="flex flex-col w-full h-36 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:bg-gray-50 upload-area">
+                                    <div class="flex flex-col items-center justify-center pt-7">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M19 19a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h10a2 2 0 012 2v10" />
+                                        </svg>
+                                        <p class="pt-3 text-sm font-medium text-green-500">Unggah audio cover</p>
+                                        <p class="text-xs text-gray-400 mt-1">MP3, WAV, atau OGG hingga 10MB</p>
+                                    </div>
+                                    <input id="coverAudio" type="file" class="hidden" accept="audio/*" />
+                                </label>
+                            </div>
+                            <div id="audioPreview" class="mt-6 hidden">
+                                <div class="bg-gray-100 p-4 rounded-xl shadow-md">
+                                    <audio id="coverAudioPreview" class="w-full" controls></audio>
+                                    <div class="mt-3 flex items-center justify-center">
+                                        <div class="w-full bg-gray-200 h-16 rounded-lg overflow-hidden audio-waveform">
+                                            <!-- Audio waveform visualization will be generated here -->
+                                            <div class="audio-wave-placeholder flex items-center justify-center h-full">
+                                                <div class="flex space-x-1">
+                                                    <div class="w-1 h-4 bg-green-500 animate-pulse"></div>
+                                                    <div class="w-1 h-8 bg-green-500 animate-pulse"></div>
+                                                    <div class="w-1 h-6 bg-green-500 animate-pulse"></div>
+                                                    <div class="w-1 h-10 bg-green-500 animate-pulse"></div>
+                                                    <div class="w-1 h-4 bg-green-500 animate-pulse"></div>
+                                                    <div class="w-1 h-7 bg-green-500 animate-pulse"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2" for="secretMessageAudio">Pesan Rahasia</label>
+                            <textarea id="secretMessageAudio" class="w-full px-4 py-3 text-gray-700 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300" rows="4" placeholder="Masukkan pesan rahasia Anda..."></textarea>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <label class="block text-gray-700 font-medium mb-2" for="passwordAudio">Kata Sandi (Opsional)</label>
+                            <input id="passwordAudio" type="password" class="w-full px-4 py-3 text-gray-700 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300" placeholder="Masukkan kata sandi untuk keamanan tambahan" />
+                        </div>
+                        
+                        <button id="encodeAudioBtn" class="w-full btn-green text-white py-3 px-4 rounded-xl font-medium text-lg text-center flex justify-center items-center">Enkripsi Pesan</button>
+                        
+                        <div id="encodeAudioResult" class="mt-8 hidden">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Hasil</h3>
+                            <div class="bg-green-50 p-6 rounded-xl border border-green-100">
+                                <div class="bg-white p-4 rounded-lg shadow-sm">
+                                    <audio id="stegoAudioPreview" class="w-full" controls></audio>
+                                    <div class="mt-3 flex items-center justify-center">
+                                        <div class="w-full bg-gray-100 h-16 rounded-lg overflow-hidden audio-waveform">
+                                            <!-- Stego audio waveform visualization -->
+                                            <div class="audio-wave-placeholder flex items-center justify-center h-full">
+                                                <div class="flex space-x-1">
+                                                    <div class="w-1 h-5 bg-green-500 animate-pulse"></div>
+                                                    <div class="w-1 h-7 bg-green-500 animate-pulse"></div>
+                                                    <div class="w-1 h-6 bg-green-500 animate-pulse"></div>
+                                                    <div class="w-1 h-9 bg-green-500 animate-pulse"></div>
+                                                    <div class="w-1 h-5 bg-green-500 animate-pulse"></div>
+                                                    <div class="w-1 h-8 bg-green-500 animate-pulse"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-6 flex justify-center">
+                                    <a id="downloadAudioLink" class="btn-green text-white py-3 px-6 rounded-xl font-medium" download="stego_audio.mp3">Unduh Audio</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Image Decode Tab Content (Back Card) -->
+                    <div id="imageDecodeTab" class="card-back bg-white">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+                                </svg>
+                            </div>
+                            <h2 class="text-2xl font-bold text-gray-800">Dekripsi Pesan - Gambar</h2>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2" for="stegoImage">Gambar Stego</label>
+                            <div class="flex items-center justify-center w-full">
+                                <label class="flex flex-col w-full h-36 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:bg-gray-50 upload-area">
+                                    <div class="flex flex-col items-center justify-center pt-7">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                        <p class="pt-3 text-sm font-medium text-purple-500">Unggah gambar stego</p>
+                                        <p class="text-xs text-gray-400 mt-1">PNG, JPG atau GIF hingga 5MB</p>
+                                    </div>
+                                    <input id="stegoImage" type="file" class="hidden" accept="image/*" />
+                                </label>
+                            </div>
+                            <div id="stegoPreview" class="mt-6 hidden">
+                                <img id="stegoImageDecodePreview" class="max-h-64 rounded-xl mx-auto shadow-md" src="/api/placeholder/400/320" alt="Stego image preview" />
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <label class="block text-gray-700 font-medium mb-2" for="decodePassword">Kata Sandi (Jika diperlukan)</label>
+                            <input id="decodePassword" type="password" class="w-full px-4 py-3 text-gray-700 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300" placeholder="Masukkan kata sandi jika ada" />
+                        </div>
+                        
+                        <button id="decodeBtn" class="w-full btn-secondary text-white py-3 px-4 rounded-xl font-medium text-lg text-center flex justify-center items-center">Dekripsi Pesan</button>
+                        
+                        <div id="decodeResult" class="mt-8 hidden">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Pesan Terdekripsi</h3>
+                            <div class="bg-purple-50 p-6 rounded-xl border border-purple-100">
+                                <p id="extractedMessage" class="text-gray-700 break-words bg-white p-4 rounded-lg shadow-sm"></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Audio Decode Tab Content -->
+                    <div id="audioDecodeTab" class="bg-white hidden normal-orientation">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M19 19a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h10a2 2 0 012 2v10" />
+                                </svg>
+                            </div>
+                            <h2 class="text-2xl font-bold text-gray-800">Dekripsi Pesan - Audio</h2>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2" for="stegoAudio">Audio Stego</label>
+                            <div class="flex items-center justify-center w-full">
+                                <label class="flex flex-col w-full h-36 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:bg-gray-50 upload-area">
+                                    <div class="flex flex-col items-center justify-center pt-7">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M19 19a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h10a2 2 0 012 2v10" />
+                                        </svg>
+                                        <p class="pt-3 text-sm font-medium text-purple-500">Unggah audio stego</p>
+                                        <p class="text-xs text-gray-400 mt-1">MP3, WAV, atau OGG hingga 10MB</p>
+                                    </div>
+                                    <input id="stegoAudio" type="file" class="hidden" accept="audio/*" />
+                                </label>
+                            </div>
+                            <div id="stegoAudioPreviewContainer" class="mt-6 hidden">
+                                <div class="bg-gray-100 p-4 rounded-xl shadow-md">
+                                    <audio id="stegoAudioDecodePreview" class="w-full" controls></audio>
+                                    <div class="mt-3 flex items-center justify-center">
+                                        <div class="w-full bg-gray-200 h-16 rounded-lg overflow-hidden audio-waveform">
+                                            <!-- Audio waveform visualization -->
+                                            <div class="audio-wave-placeholder flex items-center justify-center h-full">
+                                                <div class="flex space-x-1">
+                                                    <div class="w-1 h-5 bg-purple-500 animate-pulse"></div>
+                                                    <div class="w-1 h-9 bg-purple-500 animate-pulse"></div>
+                                                    <div class="w-1 h-6 bg-purple-500 animate-pulse"></div>
+                                                    <div class="w-1 h-8 bg-purple-500 animate-pulse"></div>
+                                                    <div class="w-1 h-4 bg-purple-500 animate-pulse"></div>
+                                                    <div class="w-1 h-7 bg-purple-500 animate-pulse"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <label class="block text-gray-700 font-medium mb-2" for="decodePasswordAudio">Kata Sandi (Jika diperlukan)</label>
+                            <input id="decodePasswordAudio" type="password" class="w-full px-4 py-3 text-gray-700 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300" placeholder="Masukkan kata sandi jika ada" />
+                        </div>
+                        
+                        <button id="decodeAudioBtn" class="w-full btn-secondary text-white py-3 px-4 rounded-xl font-medium text-lg text-center flex justify-center items-center">Dekripsi Pesan</button>
+                        
+                        <div id="decodeAudioResult" class="mt-8 hidden">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Pesan Terdekripsi</h3>
+                            <div class="bg-purple-50 p-6 rounded-xl border border-purple-100">
+                                <p id="extractedAudioMessage" class="text-gray-700 break-words bg-white p-4 rounded-lg shadow-sm"></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+        
+        <!-- Info Panel -->
+        <div class="lg:w-96 bg-white rounded-2xl card-shadow p-4 sm:p-6 md:p-8 border border-gray-100">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Tentang StegaShield</h2>
+            
+            <div class="mb-8">
+                <h3 class="text-lg font-semibold text-gray-800 mb-3">Apa itu Steganografi GAN?</h3>
+                <p class="text-gray-600 leading-relaxed">Generative Adversarial Network (GAN) adalah teknik steganografi domain transformasi yang menyembunyikan pesan menggunakan jaringan saraf tiruan, bukan langsung pada piksel. Ini memberikan ketahanan yang lebih baik terhadap kompresi dan manipulasi.</p>
+            </div>
                 
                 <div class="mb-8">
                     <h3 class="text-lg font-semibold text-gray-800 mb-3">Keunggulan</h3>
                     <ul class="text-gray-600 space-y-2">
                         <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                             </svg>
-                            <span>Tahan terhadap kompresi</span>
+                            Ketahanan lebih baik terhadap kompresi dan manipulasi gambar
                         </li>
                         <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                             </svg>
-                            <span>Perubahan visual minimal</span>
+                            Kemampuan menyembunyikan pesan dengan kapasitas yang lebih besar
                         </li>
                         <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                             </svg>
-                            <span>Keamanan yang ditingkatkan</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                            </svg>
-                            <span>Kapasitas pesan yang lebih besar</span>
+                            Keamanan yang lebih tinggi melalui enkripsi berlapis
                         </li>
                     </ul>
                 </div>
                 
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Cara Kerja</h3>
+                    <p class="text-gray-600 leading-relaxed">StegaShield menggunakan domain transformasi dengan GAN untuk menyembunyikan pesan dalam koefisien wavelet gambar atau audio, bukan pada nilai piksel atau sampel langsung. Ini membuat pesan tersembunyi lebih tahan terhadap operasi pemrosesan dan tidak terdeteksi oleh analisis visual atau pendengaran.</p>
+                </div>
                 
-                <div class="border-t border-gray-200 pt-6">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Keamanan Pesan</h3>
-                    <p class="text-gray-600 leading-relaxed mb-4">Semua pesan dienkripsi dengan AES-256 sebelum disembunyikan, menambahkan lapisan keamanan tambahan bahkan jika steganografi terdeteksi.</p>
-                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r">
-                        <div class="flex">
-                            <div class="flex-shrink-0">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-600" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2h-1V9a1 1 0 00-1-1z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                            <div class="ml-3">
-                                <p class="text-sm text-yellow-700">
-                                    Ingat kata sandi Anda! Tidak ada cara untuk memulihkan pesan jika kata sandi hilang.
-                                </p>
-                            </div>
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Keamanan</h3>
+                    <div class="bg-blue-50 p-4 rounded-xl">
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <p class="text-sm text-blue-700">Semua operasi steganografi dilakukan secara lokal di browser Anda. Kami tidak pernah mengunggah file asli atau pesan rahasia Anda ke server kami.</p>
                         </div>
                     </div>
                 </div>
+                
+                <div class="text-center pt-4">
+                    <a href="#info" class="text-blue-600 hover:text-blue-800 font-medium flex items-center justify-center">
+                        Pelajari lebih lanjut
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-    
-    <!-- How It Works Section -->
-    <div class="bg-blue-50 py-12 sm:py-16 mt-16">
-        <div class="container mx-auto px-4 sm:px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10">Bagaimana StegaShield Bekerja?</h2>
+
+    <!-- Cara Kerja Section -->
+    <section id="info" class="bg-gray-50 py-16 sm:py-24">
+        <div class="container mx-auto px-3 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6">Cara Kerja StegaShield</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Memahami proses steganografi domain transformasi menggunakan teknologi GAN.
+                </p>
+            </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Steganography Process Steps -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <!-- Step 1 -->
-                <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition duration-300">
-                    <div class="h-14 w-14 rounded-full bg-blue-100 flex items-center justify-center mb-6">
-                        <span class="text-blue-600 font-bold text-2xl">1</span>
+                <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-100 relative overflow-hidden">
+                    <div class="absolute -right-6 -top-6 w-24 h-24 rounded-full bg-blue-50 opacity-70"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                            <span class="text-2xl font-bold text-blue-600">1</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Transformasi Domain</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Media cover (gambar/audio) diubah dari domain spasial ke domain transformasi seperti wavelet atau DCT untuk mendapatkan koefisien.
+                        </p>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Transformasi DCT</h3>
-                    <p class="text-gray-600">Media input ditransformasi ke domain frekuensi menggunakan DCT, mengubah data spasial menjadi komponen frekuensi.</p>
                 </div>
                 
                 <!-- Step 2 -->
-                <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition duration-300">
-                    <div class="h-14 w-14 rounded-full bg-blue-100 flex items-center justify-center mb-6">
-                        <span class="text-blue-600 font-bold text-2xl">2</span>
+                <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-100 relative overflow-hidden">
+                    <div class="absolute -right-6 -top-6 w-24 h-24 rounded-full bg-purple-50 opacity-70"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                            <span class="text-2xl font-bold text-purple-600">2</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Penyisipan GAN</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            GAN dilatih untuk menyembunyikan pesan dalam koefisien domain tersebut dengan cara yang meminimalkan perubahan perceptual pada media.
+                        </p>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Enkripsi & Penyisipan</h3>
-                    <p class="text-gray-600">Pesan dienkripsi dan kemudian disembunyikan dengan hati-hati dalam koefisien frekuensi menengah untuk keseimbangan optimal.</p>
                 </div>
                 
                 <!-- Step 3 -->
-                <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition duration-300">
-                    <div class="h-14 w-14 rounded-full bg-blue-100 flex items-center justify-center mb-6">
-                        <span class="text-blue-600 font-bold text-2xl">3</span>
+                <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-100 relative overflow-hidden">
+                    <div class="absolute -right-6 -top-6 w-24 h-24 rounded-full bg-green-50 opacity-70"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+                            <span class="text-2xl font-bold text-green-600">3</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Ekstraksi & Validasi</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Pesan diekstrak menggunakan model GAN ekstraksi yang terlatih. Proses validasi memastikan keutuhan pesan bahkan setelah kompresi.
+                        </p>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Transformasi Balik</h3>
-                    <p class="text-gray-600">Inverse DCT mengembalikan data ke domain spasial, menghasilkan file dengan perubahan perseptual minimal.</p>
                 </div>
             </div>
         </div>
-    </div>
-    
+    </section>
+
     <!-- FAQ Section -->
-    <div class="container mx-auto px-4 sm:px-6 py-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10">Pertanyaan yang Sering Diajukan</h2>
-        
-        <div class="max-w-3xl mx-auto">
-            <!-- FAQ Item 1 -->
-            <div class="mb-6">
-                <button class="w-full flex justify-between items-center p-5 bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 faq-toggle">
-                    <span class="text-lg font-semibold text-gray-800">Apa itu steganografi?</span>
-                    <svg class="h-6 w-6 text-blue-500 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                <div class="overflow-hidden max-h-0 transition-all duration-300 faq-content">
-                    <div class="p-5 bg-gray-50 rounded-b-xl">
-                        <p class="text-gray-600">Steganografi adalah seni dan ilmu menyembunyikan pesan dalam media lain (seperti gambar atau audio) sedemikian rupa sehingga hanya pengirim dan penerima yang menyadari keberadaan pesan tersebut. Tidak seperti kriptografi yang membuat pesan tidak dapat dibaca, steganografi menyembunyikan fakta bahwa komunikasi terjadi.</p>
-                    </div>
-                </div>
+    <section class="py-16 sm:py-24">
+        <div class="container mx-auto px-3 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6">Pertanyaan Umum</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Jawaban untuk pertanyaan yang sering diajukan tentang StegaShield dan steganografi GAN.
+                </p>
             </div>
             
-            <!-- FAQ Item 2 -->
-            <div class="mb-6">
-                <button class="w-full flex justify-between items-center p-5 bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 faq-toggle">
-                    <span class="text-lg font-semibold text-gray-800">Mengapa menggunakan DCT lebih baik dari LSB?</span>
-                    <svg class="h-6 w-6 text-blue-500 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                <div class="overflow-hidden max-h-0 transition-all duration-300 faq-content">
-                    <div class="p-5 bg-gray-50 rounded-b-xl">
-                        <p class="text-gray-600">Teknik LSB (Least Significant Bit) tradisional menyembunyikan data di bit paling tidak signifikan dari piksel, membuatnya rentan terhadap kompresi dan pemrosesan gambar. Metode DCT menyembunyikan pesan dalam domain frekuensi, menjadikannya lebih tahan terhadap kompresi, pemotongan, dan manipulasi gambar lainnya.</p>
+            <div class="max-w-4xl mx-auto">
+                <!-- FAQ Item 1 -->
+                <div class="mb-6">
+                    <button class="faq-question w-full bg-white rounded-xl p-6 shadow-md border border-gray-100 flex justify-between items-center">
+                        <span class="text-lg font-semibold text-gray-800">Apa perbedaan steganografi GAN dan steganografi tradisional?</span>
+                        <svg class="faq-arrow w-5 h-5 text-gray-500 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer bg-white rounded-b-xl px-6 pb-6 hidden mt-1 border-b border-l border-r border-gray-100">
+                        <p class="text-gray-600 leading-relaxed">
+                            Steganografi tradisional biasanya menyisipkan bit pesan langsung ke nilai piksel (LSB) atau sampel audio, yang rentan terhadap kompresi dan transformasi. Steganografi GAN menggunakan jaringan saraf untuk menyembunyikan pesan dalam domain transformasi, yang membuatnya lebih tahan terhadap kompresi, pemrosesan gambar/audio, dan analisis statistik.
+                        </p>
                     </div>
                 </div>
-            </div>
-            
-            <!-- FAQ Item 3 -->
-            <div class="mb-6">
-                <button class="w-full flex justify-between items-center p-5 bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 faq-toggle">
-                    <span class="text-lg font-semibold text-gray-800">Berapa banyak data yang dapat disembunyikan?</span>
-                    <svg class="h-6 w-6 text-blue-500 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                <div class="overflow-hidden max-h-0 transition-all duration-300 faq-content">
-                    <div class="p-5 bg-gray-50 rounded-b-xl">
-                        <p class="text-gray-600">Kapasitas tergantung pada ukuran file cover. Untuk gambar, Anda dapat menyembunyikan sekitar 10-15% dari ukuran file cover tanpa degradasi visual yang signifikan. Untuk file audio, kapasitas biasanya sekitar 5-10% dari ukuran file asli tanpa gangguan yang dapat didengar.</p>
+                
+                <!-- FAQ Item 2 -->
+                <div class="mb-6">
+                    <button class="faq-question w-full bg-white rounded-xl p-6 shadow-md border border-gray-100 flex justify-between items-center">
+                        <span class="text-lg font-semibold text-gray-800">Apakah pesan rahasia saya aman dengan StegaShield?</span>
+                        <svg class="faq-arrow w-5 h-5 text-gray-500 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer bg-white rounded-b-xl px-6 pb-6 hidden mt-1 border-b border-l border-r border-gray-100">
+                        <p class="text-gray-600 leading-relaxed">
+                            Ya. StegaShield mengenkripsi pesan Anda secara end-to-end sebelum penyembunyian, dan semua proses dilakukan secara lokal di browser Anda. Kami tidak pernah melihat atau menyimpan pesan atau media Anda. Tambahan kata sandi opsional memberikan lapisan keamanan ekstra, di mana hanya penerima dengan kata sandi yang benar yang dapat mengekstrak pesan tersembunyi.
+                        </p>
                     </div>
                 </div>
-            </div>
-            
-            <!-- FAQ Item 4 -->
-            <div class="mb-6">
-                <button class="w-full flex justify-between items-center p-5 bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 faq-toggle">
-                    <span class="text-lg font-semibold text-gray-800">Apakah file stego dapat dikompresi?</span>
-                    <svg class="h-6 w-6 text-blue-500 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                <div class="overflow-hidden max-h-0 transition-all duration-300 faq-content">
-                    <div class="p-5 bg-gray-50 rounded-b-xl">
-                        <p class="text-gray-600">Meskipun metode DCT lebih tahan terhadap kompresi dibandingkan teknik tradisional, kompresi lossy yang agresif masih dapat merusak pesan tersembunyi. Untuk hasil terbaik, hindari mengompresi file stego dan selalu gunakan format tanpa kompresi seperti PNG untuk gambar atau WAV untuk audio.</p>
+                
+                <!-- FAQ Item 3 -->
+                <div class="mb-6">
+                    <button class="faq-question w-full bg-white rounded-xl p-6 shadow-md border border-gray-100 flex justify-between items-center">
+                        <span class="text-lg font-semibold text-gray-800">Berapa banyak teks yang dapat saya sembunyikan?</span>
+                        <svg class="faq-arrow w-5 h-5 text-gray-500 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer bg-white rounded-b-xl px-6 pb-6 hidden mt-1 border-b border-l border-r border-gray-100">
+                        <p class="text-gray-600 leading-relaxed">
+                            Kapasitas penyembunyian bergantung pada ukuran media cover. Secara umum, StegaShield dapat menyembunyikan sekitar 5-10% dari ukuran gambar cover dalam bentuk teks. Untuk gambar 1MB, ini berarti sekitar 50-100KB teks (sekitar 50.000-100.000 karakter). Untuk audio, kapasitasnya sekitar 2-5% dari ukuran file.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="mb-6">
+                    <button class="faq-question w-full bg-white rounded-xl p-6 shadow-md border border-gray-100 flex justify-between items-center">
+                        <span class="text-lg font-semibold text-gray-800">Apakah orang lain dapat mendeteksi pesan tersembunyi?</span>
+                        <svg class="faq-arrow w-5 h-5 text-gray-500 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer bg-white rounded-b-xl px-6 pb-6 hidden mt-1 border-b border-l border-r border-gray-100">
+                        <p class="text-gray-600 leading-relaxed">
+                            StegaShield dirancang untuk sangat sulit dideteksi. Media stego yang dihasilkan hampir tidak dapat dibedakan dari media asli secara visual maupun dengan alat analisis statistik standar. GAN dilatih untuk menyembunyikan pesan sambil meminimalkan perubahan yang dapat terdeteksi, membuat media stego melewati analisis steganografi kebanyakan.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        </section>
     
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">

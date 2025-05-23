@@ -7,6 +7,49 @@
     width: 100%;
     z-index: 9999;
 }
+
+header.gradient-bg {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+/* Navbar links with active state */
+header nav a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+header nav a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+header nav a:hover:after,
+header nav a.active:after {
+    width: 100%;
+}
+
+/* Mobile menu styles */
+#mobileMenu {
+    transition: all 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+}
+
+#mobileMenu.open {
+    max-height: 200px;
+}
+
+#mobileMenu.hidden {
+    display: none;
+}
+
 .card-shadow {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
@@ -254,6 +297,16 @@ footer {
         position: absolute;
         width: 100%;
         z-index: 9998;
+    }
+    
+    header nav .flex.space-x-8 {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    #mobileMenuBtn {
+        display: none;
     }
 }
 
